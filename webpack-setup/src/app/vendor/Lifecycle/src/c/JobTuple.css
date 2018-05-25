@@ -1,0 +1,41 @@
+/**
+ * There is no way to animate dom node on removal
+ */
+
+.listMenu article {
+    
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */    
+    -webkit-animation-duration: 0.4s; /* Chrome, Safari, Opera */
+    -webkit-animation-timing-function: ease-out; /* Chrome, Safari, Opera */    
+    animation-name: example;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;	
+}
+
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes example {
+    from {
+        opacity: 0;
+        
+    }
+    to {
+        opacity: 1;
+        
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes example {
+    from {
+        opacity: 0;
+        
+    }
+    to {
+        opacity: 1;
+        
+    }
+}

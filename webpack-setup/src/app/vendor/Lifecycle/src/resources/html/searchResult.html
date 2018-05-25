@@ -1,0 +1,33 @@
+<div>
+    <section class="srchHead"> 
+    	<a href="javascript:void(0);" id="modifyBtn" class="btn inlineBtn fr greyBtn">Modify</a> 
+    	<span id="showTxt">
+    		<h1>{searchForm.keywords}</h1>
+    	</span>
+        <div class="cl"></div>
+    </section>
+    <section id="srchTpls" class="listMenu linkList">
+        <article> 
+        	<span class="appHistIcPos"></span>
+            <a class="starIc bookmarkIc fr" href="javascript:void(0);" onclick=""></a>
+            <a count="1" href=""> 
+            		<em class="nflIc"></em> 
+            		<span class="title">
+            			{searchResult.tuple.title}
+            		</span> 
+            		<span class="cName">NDS Global</span> 
+            		<span>
+	            		<em class="expIc fl"></em>
+	            		<b>{searchResult.tuple.experience} Years</b>
+            		</span> 
+            		<span>
+            			<em class="locIc fl"></em>
+            			<b>{searchResult.tuple.location}</b>
+            		</span> 
+            		<span>
+            			<em class="ksIc fl"></em>
+            			<b class="ellipsis">{searchResult.tuple.keySkills}</b>
+            		</span> 
+            </a>
+        </article>
+</div>

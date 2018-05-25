@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Webpack Document</title>
+    <base href="//localhost:9000" />
+</head>
+
+<body>
+	<script>
+    //hack of IE and safari bug : Super expression must either be null or a function, not undefined
+    if (typeof HTMLElement !== 'function') {
+        var _HTMLElement = function() {};
+        _HTMLElement.prototype = HTMLElement.prototype;
+        HTMLElement = _HTMLElement;
+    }
+
+    // Download customElement pollyfill if browser not supported
+    if (!('registerElement' in document)) {
+        document.write(decodeURI("%3Cscript src='https://static.naukimg.com/s/0/0/j/customElements.min.js' type='text/javascript' %3E%3C/script%3E"));
+    }
+    </script>
+    <div class="fontIcon myfonticon-Back">sdf</div>
+    <div id="root" class="clr"></div>
+    <img alt="" width="100" height="100">
+</body>
+
+</html>

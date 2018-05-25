@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="canonical" href="http://www.naukri.com/searchform" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Search Jobs - Naukri.com</title>
+    <meta name="description" content="Search thousands of Jobs across top companies in India & Abroad in your desired Industry or Location" />
+    <meta name="apple-mobile-web-app-title" content="AddToHome" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script>
+    var suggParams = {
+        autoCompleteURL: "http://suggest.naukri.com/suggest/autosuggest?",
+        checkVersionURL: "http://suggest.naukri.com/suggest/v?",
+        relatedConceptURL: "http://suggest.naukri.com/suggest/autoconcepts?",
+        prefetchingURL: "http://suggest.naukri.com/suggest/prefetch?",
+        trackingURL: "http://suggestlg.naukimg.com/logger/log",
+        vertical: "",
+        qparams: {
+            "jsFarea": null
+        }
+    };
+    </script>
+    <script type="text/javascript">
+    var domain_cat = "";
+    var sendSrchCountAjax = 1;
+    var srchCountUrl = 'http://www.naukri.com/srchcount';
+    </script>
+    <script src="http://static.naukimg.com/s/1/108/j/mobileframework.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://static.naukimg.com/s/1/108/c/naukri-mobile_v39.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="http://static.naukimg.com/s/1/108/c/srpMobile.min.css" media="all" />
+    <script src="http://static.naukimg.com/s/1/108/j/mobile-plugins_v18.min.js" type="text/javascript"></script>
+    <script src="http://static.naukimg.com/s/1/108/j/jd_v19.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//static.naukimg.com/s/0/0/j/nLoggerJB_v1.8.min.js"></script>
+    <script type="text/javascript">
+    // nLogger.init({
+    //     "tag": "revamped_searchForm",
+    //     "nLogger": {
+    //         "beaconUrl": "http:\/\/logs.naukri.com\/nLogger\/errLogger.php"
+    //     },
+    //     "boomerang": {
+    //         "logBW": false,
+    //         "beaconUrl": "http:\/\/logs.naukri.com\/nLogger\/boomLogger.php",
+    //         "imageURL": "\/\/static.naukimg.com\/s\/0\/0\/i\/"
+    //     },
+    //     "appId": 109,
+    //     "userIP": "2058423590"
+    // });
+    </script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-182658-1']);
+    _gaq.push(['_setDomainName', '.naukri.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+
+<body>
+    <div class="appPromo center"> </div>
+    <div class="posR">
+        <div class="wrapper" id="slideSec">
+            <section id="slp" class="slpWrp bg default">
+                <header class="mnj oh">
+                    <div class="hbIcCont fl">
+                        <a class="hbIc posR" id="dataIcon"></a>
+                    </div>
+                    <div class="mnjHd">
+                        <a class="logoIc" href="http://www.naukri.com" alt="Naukri.com, India's No.1 Job Site"></a>
+                    </div>
+                </header>
+                <div class="floatCont" id="mainCont">
+                    <form name="searchForm" id="searchForm" action="http://www.naukri.com/search" method='post'> <i class="erLbl error" id="srchFormErr"></i>
+                        <section class="pageC">
+                            <input type="hidden" name="id" value="">
+                            <input type="hidden" name="xz" value="33_0_0">
+                            <input type="hidden" name="qs" value="r">
+                            <input type="hidden" id="qctcFil" name="qctcFil" value="1">
+                            <label for="kwd" class="label">Keywords</label>
+                            <div class="suggest" id="kwdsugg">
+                                <div class="sWrap">
+                                    <div class="iconWrap">
+                                        <a class="sCross"></a>
+                                        <a class="nLoder" style="display: none;"></a>
+                                    </div>
+                                    <div class="inpWrap">
+                                        <input name="qp" type="search" id="Sug_kwdsugg" sourceId="5000" maxlength="250" autocomplete="off" class="sugInp" value="" maxl="20" rel="custom:4001" placeholder="Enter Skills, Designation, Role" /> </div> <i class="erLbl" id="kwd_err" value=""></i> </div>
+                            </div>
+                            <label for="location" class="label">Location</label>
+                            <div class="suggest" id="locsugg">
+                                <div class="sWrap">
+                                    <div class="iconWrap">
+                                        <a class="sCross"></a>
+                                        <a class="nLoder" style="display: none;"></a>
+                                    </div>
+                                    <div class="inpWrap">
+                                        <input name="ql" type="text" class="sugInp" maxlength="250" autocomplete="off" value="" id="Sug_locsugg" placeholder="Enter the cities you want to work in" rel="custom:4001,custom:4008" /> </div> <i class="erLbl" id="Sug_locsugg_err" value=""></i> </div>
+                            </div>
+                            <div class="grid-col-2">
+                                <div class="gridCol">
+                                    <label for="exp" class="label">Experience </label>
+                                </div>
+                                <div class="gridCol">
+                                    <label for="minSal" class="label">Expected Salary </label>
+                                </div>
+                                <div class="gridCol">
+                                    <div id="exp" class="inputDup">Select</div>
+                                    <input id="expField" type="hidden" readonly="readonly" name="qe" placeholder="Select" value="" autocomplete="off"> </div>
+                                <div class="gridCol">
+                                    <div class="rSp">
+                                        <div id="minSal" class="inputDup">Minimum</div>
+                                        <input id="minSalField" type="hidden" readonly="readonly" name="qm" placeholder="Minimum" value="" autocomplete="off"> </div>
+                                </div>
+                            </div>
+                            <input id="sbt" type="submit" class="btn btnSpc" value="Search Jobs" /> </section>
+                    </form>
+                    <section id="RecentSearchSection"> </section>
+                </div>
+            </section>
+            <aside id="faAside" class="graywrpCont">
+                <section id="faSec" class="hbleft">
+                    <div class="searchCluster hb_header"><strong class="hbSrchHd">Functional Area</strong>
+                        <button class="rstBtnHb"><em class="rsetIc"></em>Reset</button>
+                    </div>
+                    <ul id="faUl" class="refList"></ul>
+                </section>
+            </aside>
+            <aside id="expAside" class="graywrpCont posA">
+                <section id="expSec" class="hbleft">
+                    <div class="searchCluster hb_header"><strong class="hbSrchHd">In Years</strong>
+                        <button class="rstBtnHb"><em class="rsetIc"></em>Reset</button>
+                    </div>
+                    <ul id="expUl" class="refList"></ul>
+                </section>
+            </aside>
+            <aside id="minSalAside" class="graywrpCont posA">
+                <section id="minSalSec" class="hbleft">
+                    <div class="searchCluster hb_header"><strong class="hbSrchHd">Lacs per Annum</strong>
+                        <button class="rstBtnHb"><em class="rsetIc"></em>Reset</button>
+                    </div>
+                    <ul id="minSalUl" class="refList"></ul>
+                </section>
+            </aside>
+            <aside id="maxSalAside" class="graywrpCont posA">
+                <section id="maxSalSec" class="hbleft">
+                    <div class="searchCluster hb_header"><strong class="hbSrchHd">Maximum Salary</strong>
+                        <button class="rstBtnHb"><em class="rsetIc"></em>Reset</button>
+                    </div>
+                    <ul id="maxSalUl" class="refList"></ul>
+                </section>
+            </aside>
+        </div>
+        <link rel="stylesheet" type="text/css" href="http://static.naukimg.com/s/1/108/c/icons_v12.min.css" media="all" />
+        <aside id="rc_drawer" class="drawer rcDrawer graywrpCont">
+            <section class="hbleft">
+                <h1 class="head"><span id="rcCntAnim"></span> Suggested Keywords</h1>
+                <ul class="refList" style="max-height: 360px;"></ul>
+                <footer class="refine">
+                    <div class="horLoader"> <em></em> </div> <a id="rcDone" class="btn w73pC" title="">Done</a> </footer>
+            </section>
+        </aside>
+        <nav id="lNav" class="navWrp posA">
+            <div class="navCont" id="navscroll">
+                <ul class="nav">
+                    <li><a href="http://m.naukri.com/login" id="lgn"><em class="loginIc"></em>Login</a></li>
+                    <li><a id="srchJobs" href="http://www.naukri.com/searchform"><em class="srchIc"></em>Search Jobs</a></li>
+                    <li><a id="srchJobs" href="http://my.naukri.com/registration/createAccount?othersrcp=19103&amp;wExp=N"><em class="regstrWhtIc"></em>Register</a></li>
+                    <li><a id="premJobs" href="http://www.naukri.com/premium"><em class="premIc"></em>IIT / IIM Jobs</a></li>
+                    <li><a href="http://resume.naukri.com/"><em class="ffIc"></em>Paid Jobseeker Services</a></li>
+                    <li><a href="http://www.naukri.com/free-job-alerts"><em class="cja"></em>Create a Job Alert</a></li>
+                    <li><a href="http://www.naukri.com/aboutus"><em class="aboutIc"></em>About Us</a></li>
+                    <li><a href="http://w5.naukri.com/fdbck/main/feedback.php"><em class="contIc"></em>Contact Us</a></li>
+                    <li class="ftfx"> <a href="http://www.naukri.com?env=en_locale">Desktop Site</a> • <a href="http://www.naukri.com/jd/sitemap">Sitemap</a> • <a href="http://w5.naukri.com/fdbck/main/feedback.php">Feedback</a>
+                        <br/> <a href="http://www.naukri.com/privacypolicy">Privacy Policy</a> •<a href="http://www.naukri.com/termsconditions">Terms &amp; Conditions</a> <small>All rights reserved &copy; 2001- 2016 Info Edge (India) Ltd.</small> </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</body>
+<script>
+$n(document).ready(function() {
+    /*Validation*/
+    var cValidator = new commonValidator();
+    cValidator.validate({
+        formNames: 'searchForm',
+        submitButton: ['sbt']
+    });
+    appendRecentSearches();
+    $n('#sbt').attr('onclick', function() {
+        if (cValidator.isValid('searchForm')) {
+            if (window.trackObj) {
+                _gaq.push(['_trackEvent', 'Focus', 'MobSrchFormTrack', JSON.stringify(trackObj)]);
+            }
+            var qp = $n.trim($n('#Sug_kwdsugg').val()).replace(/[,\s]+$/g, "");
+            var ql = $n.trim($n('#Sug_locsugg').val()).trim(/[,\s]+$/g, "");
+            $n('#Sug_kwdsugg').val(qp);
+            $n('#Sug_locsugg').val(ql);
+            setCurAndRecentSearch();
+            if (qp != "" || ql != "") {
+                var newAction = generateStaticURL(qp, ql);
+                $n('#searchForm').attr('action', domain_cat + newAction);
+            }
+            $n('#searchForm').submit();
+        }
+    });
+    /*
+    set = 9;
+    kwdArr = [];
+    var suggInt = setInterval(function(){
+    if(set<14){
+      makeSugg(set);
+      set++;
+    }
+    else{
+      clearInterval(suggInt);
+    }
+    },500)
+    */
+    setHamburger(expJSON, 'exp');
+    //  setHamburger(maxSal,'maxSal');
+    setHamburger(minSal, 'minSal');
+    //  a= JSON.parse(fareaMapJSON);
+    /*setHamburger(a,'fa')*/
+    checkAndSetVarsForModifySearch();
+    $n("#closeAppTxt").addEvent("click", function() {
+        $n("#openAppCont").hide();
+        document.cookie = "mobBanner=1; path=/; domain=.naukri.com; ";
+        $n(this).ajaxReq({
+            type: 'get',
+            async: 'true',
+            datatype: 'text',
+            data: 'logP=oiandroid&src=cross',
+            url: 'mynaukri/logclick.php',
+            success: function callB(resp) {},
+            error: function() {}
+        });
+
+    })
+    $n("#openAppTxt").addEvent("click", function() {
+        $n(this).ajaxReq({
+            type: 'get',
+            async: 'true',
+            datatype: 'text',
+            data: 'logP=oiandroid&src=banner',
+            url: 'mynaukri/logclick.php',
+            success: function callB(resp) {
+                location.href = '';
+            },
+            error: function() {
+                location.href = '';
+            }
+        });
+    })
+    $n("#openApp").addEvent("click", function() {
+        $n(this).ajaxReq({
+            type: 'get',
+            async: 'true',
+            datatype: 'text',
+            data: 'logP=oiandroid&src=ham',
+            url: 'mynaukri/logclick.php',
+            success: function callB(resp) {
+                location.href = '';
+            },
+            error: function() {
+                location.href = '';
+            }
+        });
+    })
+})
+</script>
+<script src="http://static.naukimg.com/s/1/108/j/searchform_v3.min.js" type="text/javascript"></script>
+
+</html>

@@ -1,0 +1,1 @@
+import './../../../sass/About.scss';

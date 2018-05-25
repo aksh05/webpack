@@ -1,0 +1,11 @@
+{
+  "presets": ["es2015-loose-rollup"],
+   "plugins": [
+   "es6-promise",
+   "transform-object-rest-spread",
+    ["transform-react-jsx", {
+      "pragma": "Virtual.createElement" // default pragma is React.createElement
+    }]
+  ]
+}
+

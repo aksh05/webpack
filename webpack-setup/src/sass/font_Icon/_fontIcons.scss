@@ -1,0 +1,12 @@
+@import './font/_fontIcons.scss';
+.icon,.material-icons{
+    @extend .ligature-icons;
+    overflow: hidden;
+	
+	//In some devices some icons are cut from top and left, so to prevent that nature we add 1px padding from all directions.
+    //padding:1px;
+}
+
+// .icon{
+// 	@extend .material-icons;
+// }

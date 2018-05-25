@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="http://static.naukimg.com/s/1/108/c/naukri-mobile_v39.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="http://static.naukimg.com/s/1/108/c/icons_v11.min.css" media="all">
+    <style type="text/css">
+    job-tuple.enter,
+    job-tuple.leave {
+        opacity: 0;
+    }
+    
+    job-tuple {
+        opacity: 1;
+        display: block;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;            
+    }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="../../../c/JobTuple.css"> -->
+</head>
+
+<body>
+    <tuple-list></tuple-list>
+</body>
+<script>
+if (typeof HTMLElement !== 'function') {
+    var _HTMLElement = function() {};
+    _HTMLElement.prototype = HTMLElement.prototype;
+    HTMLElement = _HTMLElement;
+}
+</script>
+<script src="http://static.naukimg.com/s/0/0/j/customElements.min.js"></script>
+<script src="http://static.naukimg.com/s/0/0/j/jquery.min.js"></script>
+<script src="bundle.js?v=5"></script>
+
+</html>

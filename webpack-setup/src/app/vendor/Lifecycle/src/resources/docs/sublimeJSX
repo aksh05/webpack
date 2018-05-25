@@ -1,0 +1,11 @@
+To support JSX in sublime 
+
+Preferences > Package Settings > HTML\CSS\JS Prettify > Set Prettify Preferences
+
+"e4x": true in the "js" section
+
+
+To support HTML in JSX
+
+replace all class with className
+replace all for with htmlFor

@@ -1,0 +1,8 @@
+fastDom
+
+
+Issue found
+
+Default implementation refer window using this.
+
+Replace this with window to use orignal raf native in browser.

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+    <h2>Components</h2>
+    <ul>
+        <li><a href="src/app/component/webcomponent">Web components</a></li>
+        <li>
+            <a href="src/app/component/virtualcomponent">Virtual components</a>
+        </li>
+    </ul>
+    <h2>Universal App</h2>
+    <ul>
+        <li><a href="//localhost:3000/pwa">SearchFlow</a> </li>
+    </ul>
+    <h2>Testcases</h2>
+    <ul>
+        <li><a href="src/test">Consolidated</a> </li>
+    </ul>
+</body>
+<script>
+if (typeof HTMLElement !== 'function') {
+    var _HTMLElement = function() {};
+    _HTMLElement.prototype = HTMLElement.prototype;
+    HTMLElement = _HTMLElement;
+}
+</script>
+<script src="http://static.naukimg.com/s/0/0/j/customElements.min.js"></script>
+<script src="src/jass/jquery-1.11.0.min.js"></script>
+
+</html>

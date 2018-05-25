@@ -1,0 +1,156 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Offlien apps</title>
+</head>
+
+<body>
+    <label>
+        <input type="radio" name="networkStatus" onchange="goOnline()" checked>GO ONLINE</label>
+    <label>
+        <input type="radio" name="networkStatus" onchange="goOffline()">GO OFFLINE</label>
+    <!-- App Shell -->
+    <form name="editProfile" method="POST">
+        <label>First Name :
+            <input type="text" name="fname">
+        </label>
+        <label>Last Name :
+            <input type="text" name="lname">
+        </label>
+        <input type="submit">
+    </form>
+</body>
+<!-- Base -->
+<script type="text/javascript" src="../../../jass/jquery-1.11.0.min.js"></script>
+<!-- App Core -->
+<!-- <script type="text/javascript" src="network.js"></script> -->
+<script src="https://npmcdn.com/redux@latest/dist/redux.min.js"></script>
+<script type="text/javascript" src="../../../../node_modules/localforage/dist/localforage.js"></script>
+<script type="text/javascript" src="../../../jass/errorResource.js"></script>
+<script type="text/javascript" src="../../../jass/resource.js"></script>
+<!-- Module -->
+<script type="text/javascript">
+var store;
+var $srpTupleCont = $("#srpTupleCont");
+var profileResource = resource.getResource("../../../resources/profile.php");
+
+//Reducer
+function list(state, action) {
+    switch (action.type) {
+        case 'UPDATE':
+            return Object.assign({}, state, action.profile)
+        default:
+            return state
+    }
+}
+
+
+var render = (function() {
+    var state;
+    /**
+     * [Currently used only for prefill]
+     * @return {[type]} [description]
+     */
+    return function() {
+        var template = "";
+        var newState = store.getState();
+        if (!state || newState.profile != state) {
+            document.forms.editProfile.elements.fname.value = newState.profile.fname;
+            document.forms.editProfile.elements.lname.value = newState.profile.lname;
+        }
+        state = newState.profile;
+        console.log("store renderd", state);
+    }
+}());
+
+
+
+function submitForm(data) {
+
+    profileResource.save(data).then(function(response) {
+        //Performance : Notify store only if there are any tuples
+
+        store.dispatch({
+            type: 'UPDATE',
+            profile: data
+        });
+
+    });
+}
+
+function goOffline() {
+    window.online = false;
+}
+
+function goOnline() {
+    window.online = true;
+}
+/**
+ * [replicate Replicate store into db
+ * Strategies : Subscibe with debounce > Subscribe > Periodic strategy
+ * ]
+ * @return {[type]} [description]
+ */
+function replicate() {
+    var state = store.getState();
+    localforage.setItem("appState", state);
+    console.log("store replicated", state);
+}
+
+/**
+ * [hydrate Update store with last saved state]
+ * @return {[type]} [description]
+ */
+function hydrate(initialState) {
+    return localforage.getItem("appState").then(function(initialState) {
+        console.log("last saved state", initialState)
+        if (!initialState) {
+            initialState = {
+                "profile": {
+
+                }
+            };
+        }
+        store = Redux.createStore(list, initialState);
+        console.log("store hyrdated", initialState);
+    });
+
+}
+
+
+function init() {
+    localforage.config({
+        //driver: localforage.WEBSQL, // Force WebSQL; same as using setDriver()
+        name: 'naukriDB',
+        version: 2.0,
+        //size: 4980736, // Size of database, in bytes. WebSQL-only for now.
+        storeName: 'naukriStore', // Should be alphanumeric, with underscores.
+        description: 'Some description'
+    });
+    hydrate().then(function() {
+
+        //Subscibe replicate on state change
+        store.subscribe(replicate);
+
+        //Subscrbe render on state change
+        //store.subscribe(render);
+
+        //Intial render
+        render();
+    });;
+    $(document.forms.editProfile).on("submit", function(event) {
+        event.preventDefault();
+        submitForm({
+            profile: {
+                fname: this.elements.fname.value,
+                lname: this.elements.lname.value
+            }
+        });
+    });
+}
+goOnline();
+init();
+</script>
+
+</html>
